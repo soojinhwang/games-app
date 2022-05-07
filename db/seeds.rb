@@ -7,45 +7,66 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts 'Creating 5 fake video games...'
-5.times do
-  videogame = Videogame.new(
-    name:  Faker::Game.title,
-    category: "#{Faker::Game.platform}, #{Faker::Game.genre}",
+puts "Creating user ..."
+10.times do
+  user = User.create(
+    email: Faker::Internet.email,
+    password: "passsword",
+    username: Faker::Internet.username(specifier: 5..10),
+    renter: false,
+    owner: true
   )
-  videgame.save!
+  puts "#{user.username} created"
 end
-puts 'Finished!'
 
+puts "Cleaning game database..."
 
-puts 'Creating 5 consoles...'
-5.times do
-  console = Console.new(
-    category: Faker::Game.platform,
-  )
-  console.save!
-end
-puts 'Finished!'
+# Game.destroy_all
 
-
-
-puts 'Creating 5 boardgames...'
-5.times do
-  boardgame = Boardgame.new(
+puts 'Creating 10 fake video games...'
+10.times do
+  game = Game.create(
     name: Faker::Game.title,
+    category: "#{Faker::Game.platform}, #{Faker::Game.genre}",
+    description: Faker::Lorem.paragraph,
+    location: Faker::Address.city,
+    price_per_day: "£#{Faker::Number.within(range: 1..10)}",
+    user_id: [1..5].sample
   )
-  boardgame.save!
+  puts "#{game.name} created"
 end
 puts 'Finished!'
 
-peripherals
 
-puts 'Creating 5 peripherals...'
-5.times do
-  peripherals = Peripherals.new(
-    name: Faker::Device.model_name,
-    category: Faker::Game.platform,
-  )
-  peripherals.save!
-end
-puts 'Finished!'
+
+# puts 'Creating 5 consoles...'
+# 5.times do
+#   console = Console.new(
+#     category: Faker::Game.platform,
+#   )
+#   console.save!
+# end
+# puts 'Finished!'
+
+
+
+# puts 'Creating 5 boardgames...'
+# 5.times do
+#   boardgame = Boardgame.new(
+#     name: Faker::Game.title,
+#   )
+#   boardgame.save!
+# end
+# puts 'Finished!'
+
+# peripherals
+
+# puts 'Creating 5 peripherals...'
+# 5.times do
+#   peripherals = Peripherals.new(
+#     name: Faker::Device.model_name,
+#     category: Faker::Game.platform,
+#   )
+#   peripherals.save!
+# end
+# puts 'Finished!'
