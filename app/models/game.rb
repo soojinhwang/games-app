@@ -3,8 +3,11 @@ class Game < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :name, presence: true
+  validates :name, length: { minimum: 3 }
 
   validates :description, presence: true
+  validates :description, length: { minimum: 10 }
+
   validates :category, presence: true, inclusion: { in: ["Video games", "Consoles", "Boardgames", "Peripherals"],
                                                     message: "%<value> is not a valid category" }
   # This only allows certain categories (the ones in the array)
