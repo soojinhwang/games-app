@@ -1,0 +1,8 @@
+<h1> <%=@game.name %></h1>
+<% @game.each do |game| %>
+<h2><%= game.category %></h2>
+<h2><%= game.description %></h2>
+<h2><%= game.location %></h2>
+<h2><%= game.price_per_day %></h2>
+<hr>
+<% end %>

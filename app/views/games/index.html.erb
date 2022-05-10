@@ -1,0 +1,8 @@
+<h1> All games </h1>
+
+<% @games.each do |game| %>
+<h2> <%= link_to game.name, game_path(game) %></h2>
+<h2><%= game.category %></h2>
+<h2><%= game.location %></h2>
+<h2><%= game.price_per_day %></h2>
+<% end %>
