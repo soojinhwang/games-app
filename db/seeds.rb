@@ -51,7 +51,7 @@ User.create!(email: "sam@gmail.com",
              first_name: "Samuel",
              last_name: "Gebru")
 
-puts "Created Aisselaa!"
+puts "Created sammy!"
 
 puts "All users created!"
 
