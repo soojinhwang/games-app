@@ -2,10 +2,9 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :game
 
-  validates :start_date, presence: true
-  validates :end_date, presence: true
+  validates :start_date, :end_date, presence: true
+  # start_date needs to be after current date
+  # end_date needs to be after start_date
   validates :approved, inclusion: { in: [true, false] }
-
-  validates :user_id, presence: true
-  validates :game_id, presence: true
+  # validation for approved is either true or false
 end
