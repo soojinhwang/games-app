@@ -14,28 +14,46 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+          <li>
+            <%= link_to root_path, class: "nav-link" do %>
+              <i class="fa-brands fa-fort-awesome"></i>
+              <p>Home</p>
+            <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Post ", "#", class: "nav-link" %>
+          <li>
+            <%= link_to games_path, class: "nav-link" do %>
+            <i class="fa-solid fa-ghost"></i>
+            <p>Games</p>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_game_path, class: "nav-link" do %>
+              <i class="fa-solid fa-puzzle-piece"></i>
+              <p>List Game</p>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "user_avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Bookings", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li>
-
-
+            <%= link_to new_game_path, class: "nav-link" do %>
+              <i class="fa-solid fa-puzzle-piece"></i>
+              <p>List Game</p>
+            <% end %>
           </li>
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+          <li>
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="fa-solid fa-circle-user"></i>
+              <p>Log in</p>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
