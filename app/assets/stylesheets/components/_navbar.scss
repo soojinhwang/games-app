@@ -10,3 +10,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.flex-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-logo h3 {
+  font-family: 'Righteous';
+  font-size: 36px;
+  color: #ea3e4e;
+  margin-left: 12px;
+}
+
+.flex-logo img {
+  margin-left: 16px;
+}
