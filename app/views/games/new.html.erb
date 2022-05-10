@@ -1,0 +1,8 @@
+<%= simple_from_for (@game) do |f|%>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :price_per_day %>
+  <%= f.submit class: 'btn btn-primary' %>
+<%= end  %>
