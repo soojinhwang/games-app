@@ -1,10 +1,14 @@
 <h1> All bookings </h1>
 
 <% @bookings.each do |booking| %>
-  <%= "User: #{booking.user.username}" %> <br>
+  <%= "User: #{booking.user.first_name}" %> <br>
   <%= "Game Name: #{booking.game.name}" %> <br>
-  <%= "Start date: #{booking.start_date}"%> <br>
+  <%= "Start date: #{booking.start_date}" %> <br>
   <%= "End date: #{booking.end_date}" %> <br>
   <%= "Aproved: #{booking.approved}"%> <br>
+  <% if user_signed_in? && current_user == game.user || booking.user %>
+    <%= link_to "Delete", game_booking_path(game), method: :delete,
+    data: { confirm: "Are you sure you want to delete #{game.name}?" } %>
+  <% end %>
   <hr>
 <% end %>
