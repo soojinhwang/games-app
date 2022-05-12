@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @games = Game.all
@@ -8,6 +8,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
   end
+
 
   def new
     @game = Game.new
