@@ -1,0 +1,10 @@
+<h1> All bookings </h1>
+
+<% @bookings.each do |booking| %>
+  <%= "User: #{booking.user.username}" %> <br>
+  <%= "Game Name: #{booking.game.name}" %> <br>
+  <%= "Start date: #{booking.start_date}"%> <br>
+  <%= "End date: #{booking.end_date}" %> <br>
+  <%= "Aproved: #{booking.approved}"%> <br>
+  <hr>
+<% end %>
