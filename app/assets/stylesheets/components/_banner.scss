@@ -6,11 +6,12 @@
 
 .banner h1 {
   margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: red;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 52px;
-  font-weight: bold;
+  // font-weight: bold;
   padding-bottom: 35px;
+  font-family: 'Righteous';
 }
 
 .banner p {
@@ -18,6 +19,8 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Nunito';
+  font-weight: bold;
 }
 
 .btn-flat {
@@ -28,7 +31,12 @@
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  font-family: 'Nunito';
+
+  // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+
 
 .banner_text{
   position: relative;
