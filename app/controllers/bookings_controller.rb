@@ -18,9 +18,10 @@ class BookingsController < ApplicationController
     @game = Game.find(params[:game_id])
     @booking = Booking.new(booking_params)
     @booking.game = @game
+    @booking.user = current_user
 
 
-    if @booking.save
+    if @booking.save!
       redirect_to booking_path(@booking)
     else
       render :new
