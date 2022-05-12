@@ -6,7 +6,7 @@
 
 .banner h1 {
   margin: 0;
-  color: red;
+  color: #EA3E4E;;
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 52px;
   // font-weight: bold;
@@ -19,8 +19,8 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-family: 'Nunito';
   font-weight: bold;
+  font-family: 'DM Sans';
 }
 
 .btn-flat {
@@ -31,7 +31,7 @@
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  font-family: 'Nunito';
+  font-family: 'DM Sans';
 
   // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
