@@ -64,6 +64,7 @@ Game.create!(name: "Tekken 3 - PSOne",
              description: "Great game, still works perfect.",
              location: "-914 Manor Road, London, SE79 8LK",
              price_per_day: 5,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Street Fighter 2 - SNES",
@@ -73,6 +74,7 @@ Game.create!(name: "Street Fighter 2 - SNES",
              London
              E67 8SO",
              price_per_day: 4,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Tamagotchi 42804 Original Black",
@@ -82,6 +84,7 @@ Game.create!(name: "Tamagotchi 42804 Original Black",
              London
              SE28 4FR",
              price_per_day: 3,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "LOGITECH Driving Force G29 PlayStation & PC Racing Wheel & Pedals",
@@ -91,6 +94,7 @@ Game.create!(name: "LOGITECH Driving Force G29 PlayStation & PC Racing Wheel & P
              London
               WC57 2FK",
              price_per_day: 10,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Talisman Revised Fourth Edition",
@@ -100,6 +104,7 @@ Game.create!(name: "Talisman Revised Fourth Edition",
              London
              SE48 0BE",
              price_per_day: 7,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "The Legend of Zelda: Breath of the Wild - Switch",
@@ -109,6 +114,7 @@ Game.create!(name: "The Legend of Zelda: Breath of the Wild - Switch",
              London
              W51 6NR",
              price_per_day: 4,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Scrabble",
@@ -118,6 +124,7 @@ Game.create!(name: "Scrabble",
              London
              W56 0TC",
              price_per_day: 3,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Sega DreamCast",
@@ -127,6 +134,7 @@ Game.create!(name: "Sega DreamCast",
              London
              E70 8RH",
              price_per_day: 17,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Nintendo 64",
@@ -136,6 +144,7 @@ Game.create!(name: "Nintendo 64",
              London
              WC87 2FA",
              price_per_day: 16,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Sony Dualsense",
@@ -145,6 +154,7 @@ Game.create!(name: "Sony Dualsense",
              London
              W28 5VA",
              price_per_day: 3,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Final Fantasy X - PS2",
@@ -154,6 +164,7 @@ Game.create!(name: "Final Fantasy X - PS2",
              London
              E18 0YN",
              price_per_day: 4,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Sonic Adventure - DreamCast",
@@ -163,6 +174,7 @@ Game.create!(name: "Sonic Adventure - DreamCast",
              London
              SW53 8GO",
              price_per_day: 5,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "Jet Set Radio - DreamCast",
@@ -172,6 +184,7 @@ Game.create!(name: "Jet Set Radio - DreamCast",
              London
              SW53 8GO",
              price_per_day: 6,
+            #photo:,
              user: User.all.sample)
 
 Game.create!(name: "PS2 Gun Controller",
@@ -181,6 +194,7 @@ Game.create!(name: "PS2 Gun Controller",
              London
              N34 2LK",
              price_per_day: 6,
+            #photo:,
              user: User.all.sample)
 
 puts "All games created!"
