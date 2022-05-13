@@ -4,7 +4,7 @@
     <div class="col-6">
       <%= simple_form_for (@game) do |f|%>
         <%= f.input :name %>
-        <%= f.input :category, :collection => ["Video games", "Consoles", "Boardgames", "Peripherals"] %>
+        <%= f.input :category, :collection => ["Video games", "Consoles", "Board games", "Peripherals"] %>
         <%= f.input :location %>
         <%= f.input :price_per_day, placeholder: 'GBP'%>
         <%= f.input :description %>
