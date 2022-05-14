@@ -8,7 +8,7 @@ class Game < ApplicationRecord
   validates :description, presence: true
   validates :description, length: { minimum: 10 }
 
-  validates :category, presence: true, inclusion: { in: ["Video games", "Consoles", "Boardgames", "Peripherals"],
+  validates :category, presence: true, inclusion: { in: ["Video games", "Consoles", "Board games", "Peripherals"],
                                                     message: "%<value> is not a valid category" }
   # This only allows certain categories (the ones in the array)
 
