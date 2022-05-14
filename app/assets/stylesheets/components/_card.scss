@@ -7,8 +7,6 @@
   display: flex;
   align-items: center;
   margin-top: 26px;
-  width: 70%;
-  position: relative;
 
 }
 
@@ -16,7 +14,6 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
-
 }
 
 .card-game h2 {
@@ -58,21 +55,4 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-
-.image-card{
-  padding: 10px;
-}
-
-.card-text-position{
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px;
-  width: 100%;
-}
-.card-game a{
-   position:absolute;
-   bottom: 0;
-   right: 10px;
-
 }
