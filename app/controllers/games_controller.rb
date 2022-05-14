@@ -4,6 +4,16 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+
+    @markers = @games.geocoded.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { game: game })
+      }
+      # {image_url: helpers.asset_url("logo.png")
+      # }
+    end
   end
 
   def show; end
@@ -33,6 +43,8 @@ class GamesController < ApplicationController
     @game.destroy
     redirect_to games_path
   end
+
+
 
   private
 
