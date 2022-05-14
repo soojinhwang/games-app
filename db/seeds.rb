@@ -60,149 +60,189 @@ category = ["Peripherals", "Video games", "Consoles", "Board games"]
 puts "Creating games..."
 
 game = Game.new(name: "Tekken 3 - PSOne",
-             category: category[rand(0..3)],
-             description: "Great game, still works perfect.",
-             location: "-914 Manor Road, London, SE79 8LK",
-             price_per_day: 5,
-            #photo:,
-             user: User.all.sample)
-             file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-             game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-             game.save
+                category: "Video games",
+                description: "Great game, still works perfect.",
+                location: "-914 Manor Road, London, SE79 8LK",
+                price_per_day: 5,
+                user: User.all.sample)
+                file = URI.open('https://en.wikipedia.org/wiki/File:T3usposter.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Street Fighter 2 - SNES",
-             category: category[rand(0..3)],
-             description: "A classic, turbo edition.",
-             location: "-66 George Street
-             London
-             E67 8SO",
-             price_per_day: 4,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Street Fighter 2 - SNES",
+                category: "Video games",
+                description: "A classic, turbo edition.",
+                location: "-66 George Street
+                London
+                E67 8SO",
+                price_per_day: 4,
+                user: User.all.sample)
+                file = URI.open('https://upload.wikimedia.org/wikipedia/en/1/1d/SF2_JPN_flyer.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Tamagotchi 42804 Original Black",
-             category: category[rand(0..3)],
-             description: "Bringing the classic back. Few scuffs but still working.",
-             location: "12 Victoria Road
-             London
-             SE28 4FR",
-             price_per_day: 3,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Tamagotchi 42804 Original Black",
+                category: "Peripherals",
+                description: "Bringing the classic back. Few scuffs but still working.",
+                location: "12 Victoria Road
+                London
+                SE28 4FR",
+                price_per_day: 3,
+                user: User.all.sample)
+                file = URI.open('https://m.media-amazon.com/images/I/61Jewo3pCoL._AC_SL1500_.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "LOGITECH Driving Force G29 PlayStation & PC Racing Wheel & Pedals",
-             category: category[rand(0..3)],
-             description: "For PC and Playstion 4 and 5.",
-             location: "99 Church Road
-             London
-              WC57 2FK",
-             price_per_day: 10,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "LOGITECH Driving Force G29 PlayStation & PC Racing Wheel & Pedals",
+                category: "Peripherals",
+                description: "For PC and Playstion 4 and 5.",
+                location: "99 Church Road
+                London
+                  WC57 2FK",
+                price_per_day: 10,
+                user: User.all.sample)
+                file = URI.open('https://m.media-amazon.com/images/I/61IYYoZ66VL._AC_SL1500_.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Talisman Revised Fourth Edition",
-             category: category[rand(0..3)],
-             description: "4th Edition!.",
-             location: "78 Manchester Road
-             London
-             SE48 0BE",
-             price_per_day: 7,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Talisman Revised Fourth Edition",
+                category: "Board games",
+                description: "4th Edition!.",
+                location: "78 Manchester Road
+                London
+                SE48 0BE",
+                price_per_day: 7,
+                user: User.all.sample)
+                file = URI.open('https://m.media-amazon.com/images/I/814UBkTubhL._AC_SL1061_.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "The Legend of Zelda: Breath of the Wild - Switch",
-             category: category[rand(0..3)],
-             description: "Have lost case but cartridge all good.",
-             location: "40 High Street
-             London
-             W51 6NR",
-             price_per_day: 4,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "The Legend of Zelda: Breath of the Wild - Switch",
+                category: "Video games",
+                description: "Have lost case but cartridge all good.",
+                location: "40 High Street
+                London
+                W51 6NR",
+                price_per_day: 4,
+                user: User.all.sample)
+                file = URI.open('https://m.media-amazon.com/images/I/61wcjVPx4sL._AC_SL1000_.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Scrabble",
-             category: category[rand(0..3)],
-             description: "Only 3 tile holders included.",
-             location: "99 Park Lane
-             London
-             W56 0TC",
-             price_per_day: 3,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Scrabble",
+                category: "Board games",
+                description: "Only 3 tile holders included.",
+                location: "99 Park Lane
+                London
+                W56 0TC",
+                price_per_day: 3,
+                user: User.all.sample)
+                file = URI.open('https://m.media-amazon.com/images/I/71QT4pb7gmL._AC_SL1500_.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Sega DreamCast",
-             category: category[rand(0..3)],
-             description: "1 controller included.",
-             location: "9111 High Street
-             London
-             E70 8RH",
-             price_per_day: 17,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Sega DreamCast",
+                category: "Consoles",
+                description: "1 controller included.",
+                location: "9111 High Street
+                London
+                E70 8RH",
+                price_per_day: 17,
+                user: User.all.sample)
+                file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Dreamcast-Console-Set.png/1920px-Dreamcast-Console-Set.png')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Nintendo 64",
-             category: category[rand(0..3)],
-             description: "2 controllers included.",
-             location: "65 Main Street
-             London
-             WC87 2FA",
-             price_per_day: 16,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Nintendo 64",
+                category: "Consoles",
+                description: "2 controllers included.",
+                location: "65 Main Street
+                London
+                WC87 2FA",
+                price_per_day: 16,
+                user: User.all.sample)
+                file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/N64-Console-Set.jpg/1920px-N64-Console-Set.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Sony Dualsense",
-             category: category[rand(0..3)],
-             description: "Controller for PS5, hardly used.",
-             location: "23 South Street
-             London
-             W28 5VA",
-             price_per_day: 3,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Sony Dualsense",
+                category: "Peripherals",
+                description: "Controller for PS5, hardly used.",
+                location: "23 South Street
+                London
+                W28 5VA",
+                price_per_day: 3,
+                user: User.all.sample)
+                file = URI.open('https://www.lifewire.com/thmb/iYGanm2bEX_kyCsZlWe3EmnmCME=/1500x1000/filters:no_upscale()/Dualsense-HeroHoriz-ea161ad409b84a54841e275164942de9.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Final Fantasy X - PS2",
-             category: category[rand(0..3)],
-             description: "Arguably the best in the series. Minor scratches but works fine.",
-             location: "985 Park Lane
-             London
-             E18 0YN",
-             price_per_day: 4,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Final Fantasy X - PS2",
+                category: "Video games",
+                description: "Arguably the best in the series. Minor scratches but works fine.",
+                location: "985 Park Lane
+                London
+                E18 0YN",
+                price_per_day: 4,
+                user: User.all.sample)
+                file = URI.open('https://upload.wikimedia.org/wikipedia/en/a/a7/Ffxboxart.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Sonic Adventure - DreamCast",
-             category: category[rand(0..3)],
-             description: "For 3 month rental.",
-             location: "9575 Manchester Road
-             London
-             SW53 8GO",
-             price_per_day: 5,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Sonic Adventure - DreamCast",
+                category: "Video games",
+                description: "For 3 month rental.",
+                location: "9575 Manchester Road
+                London
+                SW53 8GO",
+                price_per_day: 5,
+                user: User.all.sample)
+                file = URI.open('https://upload.wikimedia.org/wikipedia/en/6/60/Sonic_Adventure.PNG')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "Jet Set Radio - DreamCast",
-             category: category[rand(0..3)],
-             description: "For 3 month rental.",
-             location: "9575 Manchester Road
-             London
-             SW53 8GO",
-             price_per_day: 6,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "Jet Set Radio - DreamCast",
+                category: "Video games",
+                description: "For 3 month rental.",
+                location: "9575 Manchester Road
+                London
+                SW53 8GO",
+                price_per_day: 6,
+                user: User.all.sample)
+                file = URI.open('https://m.media-amazon.com/images/M/MV5BYjAyMTNjZGQtZmQwMC00NzI5LWIyZjItN2VkZmJiMzIzODkzXkEyXkFqcGdeQXVyMTA1OTEwNjE@._V1_.jpg')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
-Game.create!(name: "PS2 Gun Controller",
-             category: category[rand(0..3)],
-             description: "Perfect for old school classics like Time Crisis.",
-             location: "632 Station Road
-             London
-             N34 2LK",
-             price_per_day: 6,
-            #photo:,
-             user: User.all.sample)
+game = Game.new(name: "PS2 Gun Controller",
+                category: "Peripherals",
+                description: "Perfect for old school classics like Time Crisis.",
+                location: "632 Station Road
+                London
+                N34 2LK",
+                price_per_day: 6,
+                user: User.all.sample)
+                file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJACpvZzC1xGcv5TtwfDVFiKS6kcFGGukkPxZXcsrmQIm-nEFFX0hmQDU2vCqpFYm_U0Y&usqp=CAU')
+                game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+                game.save
 
 puts "All games created!"
 
 puts "Creating bookings"
+
+rand(6..10).times do
+  Booking.create!(start_date: DateTime.now,
+                  end_date: DateTime.now + rand(3..7),
+                  user: User.all.sample,
+                  game: Game.all.sample,
+                  approved: false)
+end
+
+puts "Booking created!"
+
+puts "ALL DONE!"
+
+#couldve made an array and then .random
+
 
 rand(6..10).times do
   Booking.create!(start_date: DateTime.now,
