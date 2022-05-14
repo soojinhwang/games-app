@@ -1,4 +1,4 @@
-<h1> <%=  @game.name %></h1>
+<h1 style = "text-align: center;"> <%=  @game.name %></h1>
 
 
 <div class="container">
@@ -6,7 +6,7 @@
     <div class="col-6">
      <%= simple_form_for(@game) do |f|%>
         <%= f.input :name %>
-        <%= f.input :category, :collection => ["Video games", "Consoles", "Boardgames", "Peripherals"] %>
+        <%= f.input :category, :collection => ["Video games", "Consoles", "Board games", "Peripherals"] %>
         <%= f.input :location %>
         <%= f.input :price_per_day %>
         <%= f.input :description %>

@@ -1,8 +1,7 @@
-<h1> <%= "Booking: #{@game.name}" %></h1>
+<h1 style = "text-align: center;"> <%= "Booking: #{@game.name}" %></h1>
 
 <%= simple_form_for [@game, @booking] do |f|%>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit class: 'btn btn-danger text-white' %>
 <% end %>
-<%# <form action="/" method = "post"></form> %>

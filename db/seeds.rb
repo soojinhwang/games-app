@@ -55,7 +55,7 @@ puts "Created sammy!"
 
 puts "All users created!"
 
-category = ["Peripherals", "Video games", "Consoles", "Boardgames"]
+category = ["Peripherals", "Video games", "Consoles", "Board games"]
 
 puts "Creating games..."
 
