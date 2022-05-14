@@ -12,9 +12,9 @@
       <%= "Owner: #{booking.game.user.username}" %> <br>
       <%= "Start date: #{booking.start_date}"%> <br>
       <%= "End date: #{booking.end_date}" %> <br>
-      <% if user_signed_in? && current_user == game.user || booking.user %>
-        <%= link_to "Delete", game_booking_path(game), method: :delete,
-        data: { confirm: "Are you sure you want to delete #{game.name}?" } %>
+      <% if user_signed_in? && current_user == booking.game.user || booking.user %>
+        <%= link_to "Delete", booking_path(booking), method: :delete,
+        data: { confirm: "Are you sure you want to delete #{booking.game.name}?" } %>
       <% end %>
     </div>
     <hr>
@@ -32,13 +32,11 @@
       <%= "Renter: #{booking.user.username}" %> <br>
       <%= "Start date: #{booking.start_date}"%> <br>
       <%= "End date: #{booking.end_date}" %> <br>
-      <% if user_signed_in? && current_user == game.user || booking.user %>
-        <%= link_to "Delete", game_booking_path(game), method: :delete,
-        data: { confirm: "Are you sure you want to delete #{game.name}?" } %>
+      <% if user_signed_in? && current_user == booking.game.user || booking.user %>
+        <%= link_to "Delete", booking_path(booking), method: :delete,
+        data: { confirm: "Are you sure you want to delete #{booking.game.name}?" } %>
       <% end %>
     </div>
     <hr>
   <% end %>
 <% end %>
-
-
