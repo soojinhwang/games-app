@@ -2,46 +2,53 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 520px;
 }
 
-.banner h1 {
-  margin: 0;
-  color: #EA3E4E;;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 52px;
-  // font-weight: bold;
-  padding-bottom: 35px;
-  font-family: 'Righteous';
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 1000px;
+
+  .text-title {
+    display: flex;
+    justify-content: start;
+  }
+
+  h1 {
+    margin: 0;
+    color: #EA3E4E;
+    font-size: 40px;
+    font-family: 'Righteous';
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-family: 'Arvo';
+    margin-right: 8px;
+    margin-bottom: 0px;
+  }
+
+  p {
+    color: $gray;
+    font-size: 20px;
+    font-family: 'DM Sans';
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
 }
 
-.banner p {
-  font-size: 20px;
+.btn-to-games {
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-weight: bold;
-  font-family: 'DM Sans';
-}
-
-.btn-flat {
-  color: white;
+  background-color: $gray;
   border: 1px solid white;
-  padding: 8px 24px;
+  padding: 12px 32px;
   border-radius: 10px;
   font-weight: bold;
-  opacity: 0.6;
   transition: opacity 0.3s ease;
   font-family: 'DM Sans';
-
+  width: fit-content;
   // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-
-
-.banner-text{
-  position: relative;
-  left: 317px;
-  bottom: 52px;
-  text-align: center;
-
 }

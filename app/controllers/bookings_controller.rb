@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @number_of_days = (@offer.end_date - @offer.start_date).to_i
+    # @number_of_days = (@offer.end_date - @offer.start_date).to_i
   end
 
   def new
