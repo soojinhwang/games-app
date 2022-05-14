@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GamesApp</title>
+    <title>Level-Up</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,13 +13,17 @@
   </head>
 
   <body>
-    <div class="page-container">
-      <%= render 'shared/navbar' %>
-      <div class="main-content">
-        <%= yield %>
+    <div class="d-flex flex-column min-vh-100">
+      <div class="page-container">
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
+        <article class="flex-grow-1">
+          <div class="main-content">
+            <%= yield %>
+          </div>
+        </article>
+        <%= render 'shared/footer' %>
       </div>
-      <%= render 'shared/flashes' %>
-      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>

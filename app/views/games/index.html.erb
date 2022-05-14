@@ -1,7 +1,7 @@
 <div class="container">
   <h1 style = "text-align: center;"> All games </h1>
   <% @games.each do |game| %>
-    <div class="row justify-content-left">
+    <div class="row justify-content-centered">
       <div class="col-12 col-lg-6">
           <%= link_to game_path(game) do %>
         <div class="card-game" >
@@ -14,7 +14,7 @@
           <p><%= game.location %></p>
           </div>
             <div class="card-game-infos">
-              <h2><%= game.price_per_day %></h2>
+              <h2><%= game.price_per_day %> £/day </h2>
             </div>
             </div>
         </div>
