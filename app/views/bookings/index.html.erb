@@ -1,14 +1,44 @@
-<h1> All bookings </h1>
+<h1 style = "text-align: center;"> All bookings </h1>
+
+
+<% if @bookings.any?{ |booking| (booking.user == current_user)} %>
+  <h2 class="container"> My bookings </h2>
+<% end %>
 
 <% @bookings.each do |booking| %>
-  <%= "User: #{booking.user.first_name}" %> <br>
-  <%= "Game Name: #{booking.game.name}" %> <br>
-  <%= "Start date: #{booking.start_date}" %> <br>
-  <%= "End date: #{booking.end_date}" %> <br>
-  <%= "Aproved: #{booking.approved}"%> <br>
-  <% if user_signed_in? && current_user == game.user || booking.user %>
-    <%= link_to "Delete", game_booking_path(game), method: :delete,
-    data: { confirm: "Are you sure you want to delete #{game.name}?" } %>
+  <% if booking.user == current_user  %>
+    <div class="container">
+      <h4> Game Name:  <%= link_to "#{booking.game.name}", booking_path(booking)%> </h4> <br>
+      <%= "Owner: #{booking.game.user.username}" %> <br>
+      <%= "Start date: #{booking.start_date}"%> <br>
+      <%= "End date: #{booking.end_date}" %> <br>
+      <% if user_signed_in? && current_user == game.user || booking.user %>
+        <%= link_to "Delete", game_booking_path(game), method: :delete,
+        data: { confirm: "Are you sure you want to delete #{game.name}?" } %>
+      <% end %>
+    </div>
+    <hr>
   <% end %>
-  <hr>
 <% end %>
+
+<% if @bookings.any? { |booking| (booking.game.user == current_user) }%>
+  <h2 class="container"> Bookings on my games </h2>
+<% end %>
+
+<% @bookings.each do |booking| %>
+  <% if booking.game.user == current_user %>
+    <div class="container">
+      <h4> Game Name:  <%= link_to "#{booking.game.name}", booking_path(booking)%> </h4> <br>
+      <%= "Renter: #{booking.user.username}" %> <br>
+      <%= "Start date: #{booking.start_date}"%> <br>
+      <%= "End date: #{booking.end_date}" %> <br>
+      <% if user_signed_in? && current_user == game.user || booking.user %>
+        <%= link_to "Delete", game_booking_path(game), method: :delete,
+        data: { confirm: "Are you sure you want to delete #{game.name}?" } %>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+<% end %>
+
+
