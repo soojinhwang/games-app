@@ -17,36 +17,34 @@
 }
 
 .card-game h2 {
-  color: black;
+  color: grey;
   font-size: 20px;
-  font-weight: normal;
-  margin: 0;
+  font: weight 300px;
+  margin: 5;
 }
 a {
   text-decoration: none;
 }
 .card-game p {
-  color: black;
+  color: grey;
   font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  font: weight 200px
   h2 {
     text-decoration: none;
   }
 }
 
-.card-game {
-  padding: 16px;
-}
 
 .card-game-infos {
   display: flex;
 }
 
 .card-text{
-  margin-left: 8px;
+  margin-left: 30px;
 
   h2 {
     text-decoration: none;
