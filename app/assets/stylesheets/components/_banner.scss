@@ -1,0 +1,47 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: #EA3E4E;;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 52px;
+  // font-weight: bold;
+  padding-bottom: 35px;
+  font-family: 'Righteous';
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  font-family: 'DM Sans';
+}
+
+.btn-flat {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  font-family: 'DM Sans';
+
+  // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
+.banner_text{
+  position: relative;
+  left: 317px;
+  bottom: 52px;
+  text-align: center;
+
+}

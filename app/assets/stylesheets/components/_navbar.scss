@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding: 0px 16px;
+  height: 100px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,12 +23,8 @@
   font-family: 'Righteous';
   font-size: 36px;
   color: $red;
-  margin-left: 12px;
-  margin-bottom: 0px;
-}
-
-.flex-logo img {
   margin-left: 16px;
+  margin-bottom: 0px;
 }
 
 .nav-link {
@@ -48,6 +46,14 @@
 .nav-item {
   margin-right: 16px;
   margin-bottom: 0px;
+
+  .a:hover {
+    color: #4b4b4b;
+  }
+
+  .dropdown {
+    margin-right: 0px;
+  }
 }
 
 .dropdown-item {

@@ -59,12 +59,15 @@ category = ["Peripherals", "Video games", "Consoles", "Boardgames"]
 
 puts "Creating games..."
 
-Game.create!(name: "Tekken 3 - PSOne",
+game = Game.new(name: "Tekken 3 - PSOne",
              category: category[rand(0..3)],
              description: "Great game, still works perfect.",
              location: "-914 Manor Road, London, SE79 8LK",
              price_per_day: 5,
              user: User.all.sample)
+             file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+             game.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+             game.save
 
 Game.create!(name: "Street Fighter 2 - SNES",
              category: category[rand(0..3)],
