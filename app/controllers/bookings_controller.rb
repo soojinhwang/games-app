@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-
   def show
     @booking = Booking.find(params[:id])
   end
