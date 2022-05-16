@@ -1,7 +1,14 @@
-<h1> <%=@game.name %></h1>
-<h2><%= @game.category %></h2>
-<h2><%= @game.description %></h2>
-<h2><%= @game.location %></h2>
-<h2><%= @game.price_per_day %></h2>
-<h2> <%= link_to 'Book this game', new_game_booking_path(@game)%></h2>
-<h2> <%= link_to 'Back to all games', games_path%></h2>
+<h1 style = "text-align: center;"> <%=@game.name %></h1>
+
+<div class="flex-container">
+  <div class="container">
+    <h2><%= @game.category %></h2>
+    <h2><%= @game.description %></h2>
+    <h2><%= @game.location %></h2>
+    <h2><%= @game.price_per_day %></h2>
+    <h2 style = "text-align: center;"> <%= link_to 'Back to all games', games_path%></h2>
+  </div>
+  <div class="container">
+   <%= render 'bookings_form' %>
+  </div>
+</div>
