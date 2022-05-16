@@ -6,7 +6,7 @@
           <%= link_to game_path(game) do %>
         <div class="card-game" >
           <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-          <%=image_tag("#{game.photo.url}") %>
+          <%= image_tag("#{game.photo.url}") %>
           <div class="card-details">
           <div class="card-text">
           <h2><%= game.name %></h2>

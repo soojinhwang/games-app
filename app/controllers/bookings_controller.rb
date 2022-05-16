@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy ]
 
   def index
     @bookings = Booking.all
@@ -9,9 +9,7 @@ class BookingsController < ApplicationController
     # @number_of_days = (@offer.end_date - @offer.start_date).to_i
   end
 
-  def new
-    @booking = Booking.new
-    @game = Game.find(params[:game_id])
+  def new;
   end
 
   def create
