@@ -8,8 +8,8 @@ class GamesController < ApplicationController
     @markers = @games.geocoded.map do |game|
       {
         lat: game.latitude,
-        lng: game.longitude
-        # info_window: render_to_string(partial: "info_window", locals: { game: game })
+        lng: game.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { game: game })
 
       }
       # {image_url: helpers.asset_url("logo.png")
