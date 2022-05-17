@@ -6,8 +6,8 @@
 
   <%= "Renter: #{@booking.game.user.username}" %> <br>
   <%= "Owner: #{@booking.user.username}" %> <br>
-  <%= "Start date: #{@booking.start_date.strftime("%d/%m/%y")}"%> <br>
-  <%= "End date: #{@booking.end_date.strftime("%d/%m/%y")}" %> <br>
+  <%= "Start date: #{@booking.start_date}"%> <br>
+  <%= "End date: #{@booking.end_date}" %> <br>
   <% if user_signed_in? && current_user == @booking.game.user || @booking.user %>
        <button> <%= link_to "Delete", booking_path(@booking), method: :delete,
         data: { confirm: "Are you sure you want to delete #{@booking.game.name}?" } %> </button>
