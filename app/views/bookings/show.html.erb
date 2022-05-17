@@ -1,5 +1,6 @@
 
-<div class="container">
+<div class="flex-container">
+  <div class="container">
 
   <h1 style = "text-align: center;"> <%= @booking.game.name %></h1>
 
@@ -8,8 +9,15 @@
   <%= "Start date: #{@booking.start_date.strftime("%d/%m/%y")}"%> <br>
   <%= "End date: #{@booking.end_date.strftime("%d/%m/%y")}" %> <br>
   <% if user_signed_in? && current_user == @booking.game.user || @booking.user %>
-        <%= link_to "Delete", booking_path(@booking), method: :delete,
-        data: { confirm: "Are you sure you want to delete #{@booking.game.name}?" } %>
+       <button> <%= link_to "Delete", booking_path(@booking), method: :delete,
+        data: { confirm: "Are you sure you want to delete #{@booking.game.name}?" } %> </button>
   <% end %> <br>
-  <%= link_to 'Back to bookings', bookings_path %>
+  <button> <%= link_to 'Back to bookings', bookings_path %> </button> <br>
+  <button> <%= link_to 'View More games', games_path %> </button>
+
+</div>
+
+ <div class="container">
+   <%= render 'bookings_edit_form' %>
+  </div>
 </div>

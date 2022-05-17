@@ -34,7 +34,8 @@ class GamesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @game.update(game_params)
@@ -45,8 +46,6 @@ class GamesController < ApplicationController
     @game.destroy
     redirect_to games_path
   end
-
-
 
   private
 

@@ -31,6 +31,8 @@ class BookingsController < ApplicationController
     # is it booking.user(the person renting the game) as well as booking.game.user(the owner of the game)? or just one of them?
     # @booking.update(booking_params)
     # redirect_to booking_path(@booking)
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def destroy
