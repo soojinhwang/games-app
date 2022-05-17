@@ -3,9 +3,13 @@
 
   <h1 style = "text-align: center;"> <%= @booking.game.name %></h1>
 
-  <%= "User: #{@booking.user.username}" %> <br>
+  <%= "Renter: #{@booking.game.user.username}" %> <br>
+  <%= "Owner: #{@booking.user.username}" %> <br>
   <%= "Start date: #{@booking.start_date}"%> <br>
   <%= "End date: #{@booking.end_date}" %> <br>
-  <%= "Aproved: #{@booking.approved}"%> <br>
-
+  <% if user_signed_in? && current_user == @booking.game.user || @booking.user %>
+        <%= link_to "Delete", booking_path(@booking), method: :delete,
+        data: { confirm: "Are you sure you want to delete #{@booking.game.name}?" } %>
+  <% end %> <br>
+  <%= link_to 'Back to bookings', bookings_path %>
 </div>

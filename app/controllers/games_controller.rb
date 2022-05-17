@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_game, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @games = Game.all
@@ -16,7 +17,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -33,18 +34,14 @@ class GamesController < ApplicationController
     end
   end
 
-  def edit
-    @game = Game.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @game = Game.find(params[:id])
     @game.update(game_params)
     redirect_to game_path(@game)
   end
 
   def destroy
-    @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path
   end
@@ -52,6 +49,10 @@ class GamesController < ApplicationController
 
 
   private
+
+  def set_game
+    @game = Game.find(params[:id])
+  end
 
   def game_params
     params.require(:game).permit(:name, :category, :description, :location, :price_per_day, :photo)
