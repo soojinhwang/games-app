@@ -17,8 +17,8 @@ connect() {
     })
     // console.log(this)
     // console.log(this.markersValue)
-    // this.#addMarkersToMap()
-    // this.#fitMapToMarkers()
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
 
     // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
     //   mapboxgl: mapboxgl }))
@@ -27,7 +27,7 @@ connect() {
 #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      // console.log(popup)
+      console.log(marker)
 
       // const customMarker = document.createElement("div")
       // customMarker.className = "marker"
