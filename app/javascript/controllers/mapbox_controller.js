@@ -26,8 +26,8 @@ connect() {
 
 #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      console.log(marker)
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      // console.log(marker)
 
       // const customMarker = document.createElement("div")
       // customMarker.className = "marker"
@@ -37,7 +37,7 @@ connect() {
       // customMarker.style.height = "25px"
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
-        // .setPopup(popup)
+        .setPopup(popup)
         .addTo(this.map)
     });
 }
