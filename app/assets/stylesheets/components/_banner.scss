@@ -1,15 +1,28 @@
 .banner {
   background-size: cover;
+  background-color: white;
   background-position: center;
-  padding: 150px 0;
-  height: 520px;
+  // background-image: url('../../');
+  // padding: 150px 0;
+  height: calc(100vh - 200px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// .banner-elements {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// }
+
+#banner-image {
+  height: 480px;
 }
 
 .banner-text {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: 1000px;
 
   .text-title {
     display: flex;
@@ -25,8 +38,9 @@
   }
 
   h2 {
-    font-size: 40px;
-    font-family: 'Arvo';
+    font-size: 42px;
+    color: $gray;
+    font-family: 'Bree Serif';
     margin-right: 8px;
     margin-bottom: 0px;
   }
@@ -42,13 +56,18 @@
 
 .btn-to-games {
   color: white;
-  background-color: $gray;
+  background-color: $red;
   border: 1px solid white;
   padding: 12px 32px;
-  border-radius: 10px;
+  border-radius: 30px;
   font-weight: bold;
   transition: opacity 0.3s ease;
   font-family: 'DM Sans';
   width: fit-content;
-  // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.btn-to-games:hover {
+  background-color: $blue;
+  color: white;
+  transition: 1.2s;
+  }

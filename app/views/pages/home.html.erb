@@ -1,12 +1,13 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1593693846895-ce517794788f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');">
-  <div class="container">
+<div class="banner">
+  <%# <div class="banner-elements"> %>
+    <%= image_tag "banner_illustration.png", id: "banner-image" %>
     <div class="banner-text">
       <div class="text-title">
         <h2>Welcome to</h2>
         <h1>Level-Up</h1>
       </div>
-      <p>Share the fun and level-up your play!</p>
+      <p>Share the fun near you and level-up your play!</p>
       <%= link_to "Let's-a go!", games_path, class: "btn-to-games" %>
     </div>
   </div>
-</div>
+<%# </div> %>
