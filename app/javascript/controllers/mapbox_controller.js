@@ -16,7 +16,7 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
     // console.log(this)
-    console.log(this.markersValue)
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
@@ -27,7 +27,7 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      console.log(popup)
+
 
       // const customMarker = document.createElement("div")
       // customMarker.className = "marker"
@@ -46,5 +46,4 @@ export default class extends Controller {
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
-
 }
