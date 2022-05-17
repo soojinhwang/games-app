@@ -10,6 +10,7 @@ class GamesController < ApplicationController
         lat: game.latitude,
         lng: game.longitude
         # info_window: render_to_string(partial: "info_window", locals: { game: game })
+
       }
       # {image_url: helpers.asset_url("logo.png")
       # }
@@ -34,7 +35,8 @@ class GamesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @game.update(game_params)
@@ -45,8 +47,6 @@ class GamesController < ApplicationController
     @game.destroy
     redirect_to games_path
   end
-
-
 
   private
 
