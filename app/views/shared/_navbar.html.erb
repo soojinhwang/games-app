@@ -38,7 +38,7 @@
                                             'aria-haspopup': true,
                                             'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "My games", "profile", class: "dropdown-item" %>
+            <%= link_to "Profile", profile_path, class: "dropdown-item" %>
             <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
