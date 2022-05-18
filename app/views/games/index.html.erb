@@ -5,15 +5,12 @@
       <div class="col-12 col-lg-6">
           <%= link_to game_path(game) do %>
         <div class="card-game" >
-          <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-
-          <%= image_tag("#{game.photo.url}") %>
-
+          <%= cl_image_tag game.photo.key, height: 300, width: 300, crop: :thumb  %>
           <div class="card-details">
           <div class="card-text">
           <h2><%= game.name %></h2>
           <p><%= game.description %></p>
-          <p><%= game.location %></p>
+          <p><%= game.category %></p>
           </div>
             <div class="card-game-infos">
               <h2><%= game.price_per_day %> £/day </h2>
