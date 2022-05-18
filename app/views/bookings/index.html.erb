@@ -21,7 +21,7 @@
               <% @bookings.each do |booking| %>
               <% if booking.user == current_user %>
                 <tr>
-                  <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking)%> </th>
+                  <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking), style: "color: #EA3E4E;" %> </th>
                   <th> <%= booking.game.user.username %> </th>
                   <th> <%= booking.start_date %></th>
                   <th> <%= booking.end_date %></th>
@@ -65,7 +65,7 @@
       <tbody>
         <% @bookings.each do |booking| %>
           <tr>
-            <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking)%> </th>
+            <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking), style: "color: #EA3E4E;"%> </th>
             <th> <%= booking.user.username %> </th>
             <th> <%= booking.start_date %></th>
             <th> <%= booking.end_date %></th>
