@@ -1,29 +1,35 @@
 <div class="container">
-  <h1 style = "text-align: center;"> All games </h1>
-  <% @games.each do |game| %>
-    <div class="row justify-content-centered">
-      <div class="col-12 col-lg-6">
-          <%= link_to game_path(game) do %>
-        <div class="card-game" >
-          <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+  <%# Put search bar in here by rendering a partial%>
+  <div class="title-elements">
+    <h1>Available Games</h1>
+    <%= link_to "List your game", new_game_path, class: "btn-red" %>
+  </div>
 
-          <%= image_tag("#{game.photo.url}") %>
-
-          <div class="card-details">
-          <div class="card-text">
-          <h2><%= game.name %></h2>
-          <p><%= game.description %></p>
-          <p><%= game.location %></p>
-          </div>
-            <div class="card-game-infos">
-              <h2><%= game.price_per_day %> £/day </h2>
-            </div>
-            </div>
-        </div>
+  <%# <div class="row justify-content-centered"> %>
+    <% @games.each do |game| %>
+    <%# <div class="col-12 col-lg-6"> %>
+      <%= link_to game_path(game) do %>
+        <div class="card-game">
+          <% if game.photo.attached? %>
+            <%= cl_image_tag game.photo.key, height: 300, width: 300, crop: :thumb  %>
+          <% else %>
+            <img src="https://unsplash.com/photos/jZ9TPXjoZQk" />
           <% end %>
-      </div>
-    </div>
-  <% end %>
+          <div class="card-details">
+            <div class="card-text">
+              <h2><%= game.name %></h2>
+              <p><%= game.description %></p>
+              <p class="category"><%= game.category %></p>
+            </div>
+            <div class="card-game-infos">
+              <h5>£ <%= number_with_precision(game.price_per_day, precision: 2) %> per day </h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%# </div> %>
+    <%# </div> %>
+    <% end %>
 </div>
 
 <div class>
