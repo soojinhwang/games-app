@@ -90,7 +90,7 @@ file = URI.open('https://m.media-amazon.com/images/I/61Jewo3pCoL._AC_SL1500_.jpg
 game3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 game3.save!
 
-game4 = Game.new(name: "Logitech Driving Force G29 PlayStation & PC Racing Wheel & Pedals",
+game4 = Game.new(name: "Logitech Driving Force G29 Racing Wheel & Pedals",
                  category: "Peripherals",
                  description: "For PC and Playstion 4 and 5.",
                  location: "SE11 4UH, London, Greater London, England, United Kingdom",

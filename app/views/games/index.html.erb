@@ -1,36 +1,32 @@
 <div class="container">
-<<<<<<< HEAD
   <%# Put search bar in here by rendering a partial%>
   <div class="title-elements">
     <h1>Available Games</h1>
     <%= link_to "List your game", new_game_path, class: "btn-red" %>
   </div>
 
-  <%# <div class="row justify-content-centered"> %>
-    <% @games.each do |game| %>
-    <%# <div class="col-12 col-lg-6"> %>
-      <%= link_to game_path(game) do %>
-        <div class="card-game">
-          <% if game.photo.attached? %>
-            <%= cl_image_tag game.photo.key, height: 300, width: 300, crop: :thumb  %>
-          <% else %>
-            <img src="https://unsplash.com/photos/jZ9TPXjoZQk" />
-          <% end %>
-          <div class="card-details">
-            <div class="card-text">
-              <h2><%= game.name %></h2>
-              <p><%= game.description %></p>
-              <p class="category"><%= game.category %></p>
-            </div>
-            <div class="card-game-infos">
-              <h5>£ <%= number_with_precision(game.price_per_day, precision: 2) %> per day </h5>
-            </div>
+
+  <% @games.each do |game| %>
+  <div class="col-12 col-lg-7">
+    <%= link_to game_path(game) do %>
+      <div class="card-game">
+        <% if game.photo.attached? %>
+          <%= cl_image_tag game.photo.key, height: 300, width: 300, crop: :fill  %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1562229125-6d6075419a22?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974/300x300" />
+        <% end %>
+        <div class="card-details">
+          <div class="card-text">
+            <h2><%= game.name %></h2>
+            <p><%= game.description %></p>
+            <p class="category"><%= game.category %></p>
           </div>
+          <h6 class="card-price">£ <%= number_with_precision(game.price_per_day, precision: 2) %> per day </h6>
         </div>
-      <% end %>
-      <%# </div> %>
-    <%# </div> %>
+      </div>
     <% end %>
+  </div>
+  <% end %>
 </div>
 
 <div class>
