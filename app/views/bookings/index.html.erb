@@ -1,42 +1,94 @@
-<h1 style = "text-align: center;"> All bookings </h1>
+<div class="bookings-card-category" style="background-color: #EA3E4E;" >
+  <h1 style= "font-weight: bold; font-family: 'Righteous';"> Bookings </h1>
+</div>
 
+<div class="container">
 
-<% if @bookings.any?{ |booking| (booking.user == current_user)} %>
-  <h2 class="container"> My bookings </h2>
-<% end %>
+  <% if @bookings.any?{ |booking| (booking.user == current_user)} %>
 
-<% @bookings.each do |booking| %>
-  <% if booking.user == current_user  %>
-    <div class="container">
-      <h4> Game Name:  <%= link_to "#{booking.game.name}", booking_path(booking)%> </h4> <br>
-      <%= "Owner: #{booking.game.user.username}" %> <br>
-      <%= "Start date: #{booking.start_date}"%> <br>
-      <%= "End date: #{booking.end_date}" %> <br>
-      <% if user_signed_in? && current_user == booking.game.user || booking.user %>
-        <%= link_to "Delete", booking_path(booking), method: :delete,
-        data: { confirm: "Are you sure you want to delete #{booking.game.name}?" } %>
-      <% end %>
+    <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Your bookings </h2>
+        <table class = "content-table">
+            <thead>
+              <tr>
+                <th> Game </th>
+                <th> Owner  </th>
+                <th> Start date </th>
+                <th> End date </th>
+                <th> Price per day (£)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @bookings.each do |booking| %>
+              <% if booking.user == current_user %>
+                <tr>
+                  <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking)%> </th>
+                  <th> <%= booking.game.user.username %> </th>
+                  <th> <%= booking.start_date %></th>
+                  <th> <%= booking.end_date %></th>
+                  <th> <%= booking.game.price_per_day %></th>
+                </tr>
+              <% end %>
+              <% end %>
+            </tbody>
+        </table>
+  <% else %>
+    <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Your bookings </h2>
+    <div class="card mb-3" style="max-width: 1000px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://blog.rentacenter.com/wp-content/uploads/2019/04/two-guys-happy-playing-video-games.jpg" class="img-fluid rounded-start" alt="...">
+       </div>
+      <div class="col-md-4 center-card-text">
+        <div class="card-body booking-align-right">
+          <h5 class="card-title" style = "color: #EA3E4E;"> You haven't booked any games!</h5>
+          <p class="card-text"> Why not browse through the list of games we have to offer and try them out!</p>
+          <%= link_to "View games", games_path, class: "btn btn-booking"%>
+       </div>
+      </div>
+     </div>
     </div>
-    <hr>
   <% end %>
-<% end %>
 
-<% if @bookings.any? { |booking| (booking.game.user == current_user) }%>
-  <h2 class="container"> Bookings on my games </h2>
-<% end %>
+  <% if @bookings.any? { |booking| (booking.game.user == current_user) }%>
 
-<% @bookings.each do |booking| %>
-  <% if booking.game.user == current_user %>
-    <div class="container">
-      <h4> Game Name:  <%= link_to "#{booking.game.name}", booking_path(booking)%> </h4> <br>
-      <%= "Renter: #{booking.user.username}" %> <br>
-      <%= "Start date: #{booking.start_date}"%> <br>
-      <%= "End date: #{booking.end_date}" %> <br>
-      <% if user_signed_in? && current_user == booking.game.user || booking.user %>
-        <%= link_to "Delete", booking_path(booking), method: :delete,
-        data: { confirm: "Are you sure you want to delete #{booking.game.name}?" } %>
-      <% end %>
+    <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Bookings on your games</h2>
+    <table class = "content-table">
+      <thead>
+        <tr>
+          <th> Game </th>
+          <th> Renter </th>
+          <th> Start date </th>
+          <th> End date </th>
+          <th> Price per day (£)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking)%> </th>
+            <th> <%= booking.user.username %> </th>
+            <th> <%= booking.start_date %></th>
+            <th> <%= booking.end_date %></th>
+            <th> <%= booking.game.price_per_day %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+   <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Bookings on your games </h2>
+    <div class="card mb-3" style="max-width: 1000px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2014/09/video-game-rental-options-featured.jpg" class="img-fluid rounded-start" alt="...">
+       </div>
+      <div class="col-md-4 center-card-text">
+        <div class="card-body booking-align-right">
+          <h5 class="card-title" style = "color: #EA3E4E;"> You don't have any bookings on your games</h5>
+          <p class="card-text"> Why list a new game and start making money today!</p>
+          <%= link_to "View games", new_game_path, class: "btn btn-booking"%>
+       </div>
+      </div>
+     </div>
     </div>
-    <hr>
   <% end %>
-<% end %>
+</div>
