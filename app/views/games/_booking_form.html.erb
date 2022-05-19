@@ -1,7 +1,9 @@
  <div class="container">
       <%= simple_form_for [@game, @booking] do |f|%>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit class: 'btn btn-danger text-white' %>
+      <div class="form-container">
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+      </div>
+      <%= f.submit class: 'btn-red' %>
       <% end %>
   </div>
