@@ -1,13 +1,11 @@
 <div class="banner">
-  <%# <div class="banner-elements"> %>
-    <%= image_tag "banner_illustration.png", id: "banner-image" %>
-    <div class="banner-text">
-      <div class="text-title">
-        <h2>Welcome to</h2>
-        <h1>Level-Up</h1>
-      </div>
-      <p>Share the fun near you and level-up your play!</p>
-      <%= link_to "Let's-a go!", games_path, class: "btn-to-games" %>
+  <%= image_tag "banner_illustration.png", id: "banner-image" %>
+  <div class="banner-text">
+    <div class="text-title">
+      <h2>Welcome to</h2>
+      <h1>Level-Up</h1>
     </div>
+    <p>Share the fun near you and level-up your play!</p>
+    <%= link_to "Let's-a go!", games_path, class: "btn-red" %>
   </div>
-<%# </div> %>
+</div>

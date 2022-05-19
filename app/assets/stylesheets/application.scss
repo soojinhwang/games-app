@@ -9,11 +9,15 @@
 @import "mapbox-gl/dist/mapbox-gl";
 
 // Your CSS partials
-@import "components/index";
+@import "pages/index";
 @import "pages/index";
 @import "pages/booking";
-@import "components/navbar";
-@import "components/card";
+@import "pages/profile";
 
+@import "components/alert";
+@import "components/avatar";
+@import "components/banner";
 @import "components/button";
+@import "components/card";
 @import "components/footer";
+@import "components/navbar";
