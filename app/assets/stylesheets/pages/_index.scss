@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.title-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+
+  h1 {
+    font-size: 32px;
+  }
+}
