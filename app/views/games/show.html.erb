@@ -20,7 +20,11 @@
 
     <div class="game-info-boxes row">
       <div class="game-info-left col-lg-8">
-        <%= cl_image_tag @game.photo.key, height: 400, width: 400, crop: :pad %>
+        <% if @game.photo.attached? %>
+          <%= cl_image_tag @game.photo.key, height: 400, width: 400, crop: :pad %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1562229125-6d6075419a22?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974" style="object-fit: contain;">
+        <% end %>
         <div class="game-text">
           <h5><%= @game.description %></h5>
           <p><strong>Owned by</strong> <%= @game.user.username %></p>
