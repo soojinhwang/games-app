@@ -2,11 +2,11 @@
   <h1 style= "font-weight: bold; font-family: 'Righteous';"> Bookings </h1>
 </div> %>
 
-<div class="container">
+<div class="container bookings-container">
 
   <% if @bookings.any?{ |booking| (booking.user == current_user)} %>
 
-    <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Your bookings </h2>
+    <h2 class = "bookings-padding-top"> Your bookings </h2>
         <table class = "content-table">
             <thead>
               <tr>
@@ -25,24 +25,24 @@
                   <th> <%= booking.game.user.username %> </th>
                   <th> <%= booking.start_date %></th>
                   <th> <%= booking.end_date %></th>
-                  <th> <%= booking.game.price_per_day %></th>
+                   <th> £<%= number_with_precision(booking.game.price_per_day, precision: 2) %> per day</th>
                 </tr>
               <% end %>
               <% end %>
             </tbody>
         </table>
   <% else %>
-    <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Your bookings </h2>
-    <div class="card mb-3" style="max-width: 1000px;">
+    <h2 class = "bookings-padding-top"> Your bookings </h2>
+    <div class="card mb-3" style="max-width: 800px;">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="https://blog.rentacenter.com/wp-content/uploads/2019/04/two-guys-happy-playing-video-games.jpg" class="img-fluid rounded-start" alt="...">
        </div>
-      <div class="col-md-4 center-card-text">
+      <div class="col-md-8 center-card-text booking-card-text">
         <div class="card-body booking-align-right">
           <h5 class="card-title" style = "color: #EA3E4E;"> You haven't booked any games!</h5>
           <p class="card-text"> Why not browse through the list of games we have to offer and try them out!</p>
-          <%= link_to "View games", games_path, class: "btn btn-booking"%>
+          <div class = "bookings-btn-red" ><%= link_to "View games", games_path, class: "btn-red"%> </div>
        </div>
       </div>
      </div>
@@ -51,7 +51,7 @@
 
   <% if @bookings.any? { |booking| (booking.game.user == current_user) }%>
 
-    <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Bookings on your games</h2>
+    <h2> Bookings on your games</h2>
     <table class = "content-table">
       <thead>
         <tr>
@@ -69,23 +69,23 @@
             <th> <%= booking.user.username %> </th>
             <th> <%= booking.start_date %></th>
             <th> <%= booking.end_date %></th>
-            <th> <%= booking.game.price_per_day %></th>
+            <th> £<%= number_with_precision(booking.game.price_per_day, precision: 2) %> per day</th>
           </tr>
         <% end %>
       </tbody>
     </table>
   <% else %>
-   <h2 style= "color: #EA3E4E; text-align: left; font-weight: bold; font-size: 36px; font-family: 'Righteous';"> Bookings on your games </h2>
-    <div class="card mb-3" style="max-width: 1000px;">
+   <h2> Bookings on your games </h2>
+    <div class="card mb-3" style="max-width: 800px;">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2014/09/video-game-rental-options-featured.jpg" class="img-fluid rounded-start" alt="...">
        </div>
-      <div class="col-md-4 center-card-text">
+      <div class="col-md-8 center-card-text booking-card-text">
         <div class="card-body booking-align-right">
           <h5 class="card-title" style = "color: #EA3E4E;"> You don't have any bookings on your games</h5>
           <p class="card-text"> Why list a new game and start making money today!</p>
-          <%= link_to "View games", new_game_path, class: "btn btn-booking"%>
+          <div class = "bookings-btn-red"> <%= link_to "View games", new_game_path, class: "btn-red"%> </div>
        </div>
       </div>
      </div>

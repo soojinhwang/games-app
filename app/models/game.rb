@@ -4,7 +4,7 @@ class Game < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_category,
-    against: [ :name, :category ],
+    against: [ :name, :category, :description ],
     using: {
       tsearch: { prefix: true }
     }
