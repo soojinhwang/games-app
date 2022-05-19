@@ -1,16 +1,22 @@
 // Import page-specific CSS files here.
 @import "home";
-
 .main-container {
   display: flex;
 }
 
-// #map {
-//   height: 100vh;
-// }
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
 
-// .main-cards {
-//   flex-grow: 1;
+.main-cards {
+  flex-grow: 1;
+  padding: 8px;
+  margin-right: 32px;
+  margin-left: 32px;
+}
+
 
 .title-elements {
   display: flex;
@@ -18,6 +24,7 @@
   align-items: center;
   margin-top: 16px;
   margin-bottom: 24px;
+  width: 100%;
 
   h1 {
     font-size: 32px;

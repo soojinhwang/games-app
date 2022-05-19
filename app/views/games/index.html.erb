@@ -1,28 +1,28 @@
 <div class="container">
 
-  <h1 style = "text-align: center;"> </h1>
-  <div class="title-elements col-12 col-lg-7">
-    <h1>Available Games</h1>
-    <%= link_to "List your game", new_game_path, class: "btn-red" %>
-  </div>
-  <%# Put search bar in here by rendering a partial%>
-
-  <%= form_tag games_path, method: :get do %>
-    <div class="search-component mb-4">
-      <div class= "input-width">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a game"
-        %>
-      </div>
-      <div>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      </div>
-    </div>
-  <% end %>
   <div class="main-container flex-container">
     <div class="main-cards container">
+    <div class="title-elements col-12 col-lg-7">
+      <h1>Available Games</h1>
+      <%= link_to "List your game", new_game_path, class: "btn-red" %>
+    </div>
+
+  <%# Put search bar in here by rendering a partial%>
+
+    <%= form_tag games_path, method: :get do %>
+      <div class="search-component mb-4">
+        <div class= "input-width">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a game"
+          %>
+        </div>
+        <div>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
       <% @games.each do |game| %>
         <%# <div class="col-12 col-lg-7"> %>
           <%= link_to game_path(game) do %>
