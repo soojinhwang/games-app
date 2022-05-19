@@ -2,30 +2,36 @@
 
   <div class="profile-page">
     <div class="profile-info">
-      <%= image_tag "user_avatar.png", :class => "profile-image" %>
-      <h3><%= (current_user.first_name).capitalize %> <%= (current_user.last_name).capitalize %></h3>
-      <p>Username : <%= current_user.username %></p>
-      <p><%= current_user.email %></p>
+      <div class="profile-details">
+        <%= image_tag "user_avatar.png", :class => "profile-image" %>
+          <div class="profile-text">
+            <h3><%= (current_user.first_name).capitalize %> <%= (current_user.last_name).capitalize %></h3>
+            <p><strong>Username</strong> <%= current_user.username %></p>
+            <p><strong>Email</strong><%= current_user.email %></p>
+          </div>
+      </div>
       <%= link_to 'Edit Info', 'users/edit', class: 'btn-red' %>
     </div>
 
     <div class="profile-games-listings">
-      <h3>Active Listings <%= link_to 'List game', new_game_path, class: 'btn-red' %></h3>
-      <% @my_games.each do |game| %>
+      <div class="games-header">
+        <h3>Active Listings</h3>
+        <%= link_to 'List game', new_game_path, class: 'btn-red' %>
+      </div>
 
+      <% @my_games.each do |game| %>
         <div class="game-listing">
-          <div class="listing-image">
-            <%# if game.photo.attached? %>
-              <%#= cl_image_tag game.photo.key. height: 60, width: 60, crop: limit %>
-              <%#= image_tag("#{game.photo.url}") %>
-            <%# else %>
-            <%#= img_src="https://images.unsplash.com/photo-1562229125-6d6075419a22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" %>
-            <%# end %>
+          <div class="game-image">
+            <% if game.photo.attached? %>
+            <%= cl_image_tag game.photo.key, height: 100, width: 100, crop: :pad %>
+          <% else %>
+            <%= img_src="https://images.unsplash.com/photo-1562229125-6d6075419a22?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974/300x300" %>
+          <% end %>
           </div>
           <div class="game-listing-text">
             <h5><%= game.name %></h5>
-            <p>Posted: <%= game.created_at.strftime("%F") %></p>
-            <% link_to 'More', game_path(game), class: 'more-info' %>
+            <p><strong>Posted on</strong> <%= game.created_at.strftime("%F") %></p>
+            <%= link_to 'More', game_path(game), class: 'more-info' %>
           </div>
         </div>
       <% end %>
