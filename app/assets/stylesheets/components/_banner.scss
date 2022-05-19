@@ -10,12 +10,6 @@
   align-items: center;
 }
 
-// .banner-elements {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
 #banner-image {
   height: 480px;
 }
@@ -54,20 +48,19 @@
   }
 }
 
-.btn-to-games {
-  color: white;
-  background-color: $red;
-  border: 1px solid white;
-  padding: 12px 32px;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  font-family: 'DM Sans';
-  width: fit-content;
-}
+// .btn-to-games {
+//   color: white;
+//   background-color: $red;
+//   border: 1px solid white;
+//   padding: 12px 32px;
+//   border-radius: 30px;
+//   font-weight: bold;
+//   font-family: 'DM Sans';
+//   width: fit-content;
+// }
 
-.btn-to-games:hover {
-  background-color: $blue;
-  color: white;
-  transition: 1.2s;
-  }
+// .btn-to-games:hover {
+//   background-color: $blue;
+//   color: white;
+//   transition: 1.2s;
+//   }
