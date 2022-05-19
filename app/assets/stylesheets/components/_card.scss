@@ -9,6 +9,7 @@
   border-radius: 16px;
   transition: 0.3s ease-in-out;
 
+
   &:hover {
     transform: scale(1.02);
     text-decoration: none;
@@ -61,4 +62,19 @@ a {
     opacity: 0.8;
     margin: 0px;
   }
+}
+
+.search-component{
+  display: flex;
+  width: 651px;
+
+}
+
+.input-width {
+  flex-grow: 1;
+
+}
+
+.form-control {
+  background-color: white;
 }
