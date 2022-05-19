@@ -18,9 +18,9 @@
       </div>
     </div>
 
-    <div class="game-info-boxes">
-      <div class="game-info-left col-8">
-        <%= cl_image_tag @game.photo.key, height: 300, width: 300, crop: :pad %>
+    <div class="game-info-boxes row">
+      <div class="game-info-left col-lg-8">
+        <%= cl_image_tag @game.photo.key, height: 400, width: 400, crop: :pad %>
         <div class="game-text">
           <h5><%= @game.description %></h5>
           <p><strong>Owned by</strong> <%= @game.user.username %></p>
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="game-info-right col-4">
+      <div class="game-info-right col">
         <%= render "booking_form", game: @game, class: "game-booking-form" %>
         <div class="game-map"
              style="height: 50vh;"
@@ -39,6 +39,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

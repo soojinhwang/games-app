@@ -1,13 +1,11 @@
- <div class="container">
-      <%= simple_form_for [@game, @booking] do |f|%>
-      <div class="form-container">
-        <div class="dates text-left">
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true %>
-        </div>
-        <div class="text-center">
-          <%= f.submit "Request this game", class: 'btn-red' %>
-        </div>
-        <% end %>
+ <div class="form-container">
+    <%= simple_form_for [@game, @booking] do |f|%>
+      <div class="dates text-left">
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
       </div>
-  </div>
+      <div class="text-center">
+        <%= f.submit "Request this game", class: 'btn-red' %>
+      </div>
+      <% end %>
+</div>
