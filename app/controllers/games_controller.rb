@@ -3,7 +3,11 @@ class GamesController < ApplicationController
   before_action :set_game, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @games = Game.all
+    if params[:query].present?
+      @games = Game.search_by_name_and_category(params[:query])
+    else
+      @games = Game.all
+    end
 
     @markers = @games.geocoded.map do |game|
       {
