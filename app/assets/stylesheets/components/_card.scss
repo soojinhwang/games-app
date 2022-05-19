@@ -1,58 +1,80 @@
-
 .card-game {
   overflow: hidden;
-  height: 120px;
+  height: 160px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(165, 144, 144, 0.2);
   display: flex;
   align-items: center;
-  margin-top: 26px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  transition: 0.3s ease-in-out;
 
+
+  &:hover {
+    transform: scale(1.02);
+    text-decoration: none;
+  }
+
+  img {
+    height: 100%;
+    width: 160px;
+    object-fit: cover;
+  }
 }
 
-.card-game img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-game h2 {
-  color: grey;
-  font-size: 20px;
-  font: weight 300px;
-  margin: 5;
-}
 a {
   text-decoration: none;
 }
-.card-game p {
-  color: grey;
-  font-size: 16px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-  font: weight 200px
+
+.card-content {
+  margin: 16px 32px;
+  width: 100%;
+}
+
+.card-text {
+
   h2 {
-    text-decoration: none;
+    color: $gray;
+    font-size: 24px;
+    font-weight: medium;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: $gray;
+    font-size: 14px;
+    font-weight: medium;
+    margin-bottom: 12px;
   }
 }
 
-
-.card-game-infos {
-  display: flex;
-}
-
-.card-text{
-  margin-left: 30px;
-
-  h2 {
-    text-decoration: none;
-  }
-}
-.card-details{
-  width: 70%;
+.card-info {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  .category {
+    background-color: $light-gray;
+    color: $dark-gray;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 30px;
+    opacity: 0.8;
+    margin: 0px;
+  }
+}
+
+.search-component{
+  display: flex;
+  width: 651px;
+
+}
+
+.input-width {
+  flex-grow: 1;
+
+}
+
+.form-control {
+  background-color: white;
 }
