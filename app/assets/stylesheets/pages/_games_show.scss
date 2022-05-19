@@ -1,0 +1,55 @@
+@media(max-width: 500px) {
+
+}
+
+.game-info-left{
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.game-title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32px;
+
+  h1 {
+    font-family: 'Righteous';
+    color: $gray;
+  }
+
+  p {
+    background-color: white;
+    color: $dark-gray;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 8px 12px;
+    opacity: 0.8;
+    margin-bottom: 0px;
+  }
+}
+
+.game-text {
+  margin-top: 16px;
+
+  h5 {
+    font-family: 'DM Sans';
+    margin-bottom: 8px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  p {
+    color: $gray;
+    font-size: 14px;
+    font-weight: medium;
+    margin-bottom: 12px;
+  }
+
+}

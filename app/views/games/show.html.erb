@@ -1,3 +1,46 @@
+<div class="container">
+  <div class="game-info-left">
+    <div class="game-title-box">
+      <h1><%= @game.name %></h1>
+      <p><%= @game.category %></p>
+
+
+    </div>
+    <%= cl_image_tag @game.photo.key, height: 300, width: 300, crop: :pad %>
+    <div class="game-text">
+      <h5><%= @game.description %></h5>
+      <p><%= @game.location %></p>
+      <h6>£ <%= number_with_precision(@game.price_per_day, precision: 2) %> per day</h6>
+    </div>
+  </div>
+
+  <div class="game-info-right">
+    <div class="title-buttons">
+      <% if @game.user == current_user %>
+        <%= link_to "Edit game", edit_game_path(@game) %>
+        <%= link_to "Delete game",
+                    game_path(@game),
+                    method: :delete,
+                    data: { confirm: "Are you sure you want to delete #{@game.name}?" } %>
+      <% else %>
+      <% end %>
+    </div>
+    <div class="booking-form">
+      <%= render "booking_form", game: @game %>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+<!--
+
 <h1 style = "text-align: center;"> <%=@game.name %></h1>
 
 <div class="flex-container">
@@ -13,8 +56,6 @@
         data: { confirm: "Are you sure you want to delete #{@game.name}?" } %></h2></button>
     <% end %>
 
-  </div>
-  <div class="container">
-   <%= render 'bookings_form' %>
-  </div>
-</div>
+  <
+
+before -->
