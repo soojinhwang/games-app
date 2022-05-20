@@ -1,17 +1,12 @@
-<div class="container">
-
-  <h1 style = "text-align: center;"> </h1>
-
-  <%# Put search bar in here by rendering a partial%>
-  <div class="d-flex">
-  <div class="results-wrap">
-  <div class="title-elements col-12 col-lg-7">
+<div class="index-container">
+  <div class="left-hand-games-result-wrap">
+  <div class="title-elements">
     <h1>Available Games</h1>
-    <%= link_to "List your game", new_game_path, class: "btn-red" %>
+    <%= link_to "List your game +", new_game_path, class: "btn-red" %>
   </div>
   <%= render 'shared/search' %>
   <% @games.each do |game| %>
-  <div class="col-12 col-lg-7">
+  <div class="games-card-container">
     <%= link_to game_path(game) do %>
       <div class="card-game">
         <% if game.photo.attached? %>
@@ -35,10 +30,9 @@
   <% end %>
 </div>
   <div id="map"
-       style="height: 100vh; width:60%"
+       style="height: 100vh; width:60vw"
        data-controller="mapbox"
        data-mapbox-markers-value="<%= @markers.to_json %>"
        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
   </div>
 </div>
