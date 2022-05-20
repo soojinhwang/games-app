@@ -3,20 +3,21 @@
 
 .index-container {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  margin: 0;
 }
 
 #map {
   height: 100vh;
   position: sticky;
   top: 0;
+  right: 0;
   // width: 600px;
 }
 
 .results-wrap {
   padding-right: 40px;
 }
-
 
 .title-elements {
   display: flex;
