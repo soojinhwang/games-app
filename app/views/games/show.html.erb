@@ -1,20 +1,47 @@
-<h1 style = "text-align: center;"> <%=@game.name %></h1>
+<div class="container">
+  <div class="game-container">
+    <div class="game-title-box">
+      <h1><%= @game.name %></h1>
+      <div class="title-navs">
+        <p><%= @game.category %></p>
+        <% if @game.user == current_user %>
+          <%= link_to "Edit game", edit_game_path(@game), class: "title-buttons" %>
+          <%= link_to "Delete game",
+                      game_path(@game),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete #{@game.name}?" },
+                      class: "title-buttons" %>
+          <%= link_to "Back to games", games_path, class: "title-buttons" %>
+        <% else %>
+          <%= link_to "Back to games", games_path, class: "title-buttons" %>
+        <% end %>
+      </div>
+    </div>
 
-<div class="flex-container">
-  <div class="container">
-    <h2>Category: <%= @game.category %></h2>
-    <h2>Description: <%= @game.description %></h2>
-    <h2>Location: <%= @game.location %></h2>
-    <h2>Price per day: £<%= @game.price_per_day %></h2>
-    <button> <h2> <%= link_to 'Back to all games', games_path%></h2> </button>
-    <% if @game.user = current_user %>
-      <button> <h2> <%= link_to 'Edit Game', edit_game_path(@game)%></h2> </button>
-      <button> <h2> <%= link_to "Delete", game_path(@game), method: :delete,
-        data: { confirm: "Are you sure you want to delete #{@game.name}?" } %></h2></button>
-    <% end %>
+    <div class="game-info-boxes row">
+      <div class="game-info-left col-lg-8">
+        <% if @game.photo.attached? %>
+          <%= cl_image_tag @game.photo.key, height: 400, width: 400, crop: :pad %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1562229125-6d6075419a22?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974" style="object-fit: contain;">
+        <% end %>
+        <div class="game-text">
+          <h5><%= @game.description %></h5>
+          <p><strong>Owned by</strong> <%= @game.user.username %></p>
+          <p><strong>Pick-up location</strong> <%= @game.location %></p>
+          <h6>£ <%= number_with_precision(@game.price_per_day, precision: 2) %> per day</h6>
+        </div>
+      </div>
 
-  </div>
-  <div class="container">
-   <%= render 'bookings_form' %>
+      <div class="game-info-right col">
+        <%= render "booking_form", game: @game, class: "game-booking-form" %>
+        <div class="game-map"
+             style="height: 50vh;"
+             data-controller="mapbox"
+             data-mapbox-markers-value="<%= @markers.to_json %>"
+             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
   </div>
 </div>

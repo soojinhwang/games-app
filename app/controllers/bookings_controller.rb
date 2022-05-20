@@ -17,10 +17,10 @@ class BookingsController < ApplicationController
     @game = Game.find(params[:game_id])
     @booking.game = @game
     @booking.user = current_user
-    if @booking.save!
+    if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      redirect_to game_path(@game), alert: @booking.errors.full_messages
     end
   end
 

@@ -2,3 +2,36 @@
   display: flex;
   flex-wrap: nowrap;
 }
+
+
+.bookings-container h2 {
+  color: $gray;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  font-family: 'Righteous';
+}
+
+.bookings-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+table {
+  width: 80%;
+}
+}
+
+.bookings-padding-top {
+padding-top: 25px;
+}
+
+.booking-card-text {
+padding-left: 40px;
+padding-top: 20px;
+}
+
+.bookings-btn-red {
+padding-top: 20px;
+padding-left: 200px;
+}
