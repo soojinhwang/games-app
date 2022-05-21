@@ -4,8 +4,8 @@
 
   <h1 style = "text-align: center;"> <%= @booking.game.name %></h1>
 
-  <%= "Renter: #{@booking.game.user.username}" %> <br>
-  <%= "Owner: #{@booking.user.username}" %> <br>
+  <%= "Owner: #{@booking.game.user.username}" %> <br>
+  <%= "Renter: #{@booking.user.username}" %> <br>
   <%= "Start date: #{@booking.start_date}"%> <br>
   <%= "End date: #{@booking.end_date}" %> <br>
   <% if user_signed_in? && current_user == @booking.game.user || @booking.user %>

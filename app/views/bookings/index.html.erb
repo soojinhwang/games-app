@@ -49,7 +49,9 @@
     </div>
   <% end %>
 
-  <% if @bookings.any? { |booking| (booking.game.user == current_user) }%>
+  <% @mybookings =  @bookings.select { |booking| (booking.game.user == current_user) } %>
+
+  <% if @mybookings.any? %>
 
     <h2> Bookings on your games</h2>
     <table class = "content-table">
@@ -63,7 +65,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @bookings.each do |booking| %>
+        <% @mybookings.each do |booking|  %>
           <tr>
             <th class = "color-red"> <%= link_to "#{booking.game.name}", booking_path(booking), style: "color: #EA3E4E;"%> </th>
             <th> <%= booking.user.username %> </th>
@@ -85,7 +87,7 @@
         <div class="card-body booking-align-right">
           <h5 class="card-title" style = "color: #EA3E4E;"> You don't have any bookings on your games</h5>
           <p class="card-text"> Why list a new game and start making money today!</p>
-          <div class = "bookings-btn-red"> <%= link_to "View games", new_game_path, class: "btn-red"%> </div>
+          <div class = "bookings-btn-red"> <%= link_to "List games", new_game_path, class: "btn-red"%> </div>
        </div>
       </div>
      </div>
