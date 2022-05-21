@@ -1,6 +1,6 @@
-
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" style="margin: 24px;">
+  <h1 style = "text-align: center;">List New Game</h1>
     <div class="col-6">
       <%= simple_form_for (@game) do |f|%>
         <%= f.input :name %>
@@ -12,7 +12,7 @@
         <%= f.input :description %>
         <%= f.input :photo, as: :file %>
         <div class="row justify-content-center">
-          <%= f.submit class: 'btn btn-danger text-white' %>
+          <%= f.submit class: 'btn-red' %>
         </div>
       <% end %>
     </div>

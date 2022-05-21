@@ -1,3 +1,14 @@
-<h4><%= game.name %></h4>
-<p><%= game.location %></p>
-<%= cl_image_tag game.photo.key, height: 100, width: 100, crop: :fill %>
+<%= link_to game_path(game) do %>
+  <div class="game-map-card">
+    <% if game.photo.attached? %>
+      <%= cl_image_tag game.photo.key, height: 300, width: 300, crop: :pad %>
+    <% else %>
+      <img src="https://images.unsplash.com/photo-1562229125-6d6075419a22?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974/300x300" />
+    <% end %>
+    <h3><%= game.name %></h3>
+    <div class="game-map-card-details">
+      <p class="category"><%= game.category %></p>
+      <h6 class="card-price">£ <%= number_with_precision(game.price_per_day, precision: 2) %> per day </h6>
+    </div>
+  </div>
+<% end %>

@@ -27,7 +27,7 @@
         <% end %>
         <div class="game-text">
           <h5><%= @game.description %></h5>
-          <p><strong>Owned by</strong> <%= @game.user.username %></p>
+          <p><strong>Listed by</strong> <%= @game.user.username %></p>
           <p><strong>Pick-up location</strong> <%= @game.location %></p>
           <h6>£ <%= number_with_precision(@game.price_per_day, precision: 2) %> per day</h6>
         </div>

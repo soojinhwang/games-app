@@ -1,0 +1,76 @@
+@media(max-width: 500px) {
+}
+
+.booking-show-container {
+  height: calc(100vh - 224px);
+}
+
+h1 {
+  font-family: 'Righteous';
+  color: $gray;
+  font-size: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.booking-info-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 15px rgba(165, 144, 144, 0.2);
+  margin: 0 auto;
+}
+
+.booking-info-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 24px 0px;
+  border-bottom: 2px dotted $gray;
+}
+
+.booking-image {
+  img {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    object-fit: contain;
+  }
+}
+
+.booking-text {
+  margin-left: 16px;
+}
+
+.booking-navs-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px;
+}
+
+.booking-user-navs {
+  display: flex;
+}
+
+.booking-buttons-gray {
+  background-color: $gray;
+  color: white;
+  width: fit-content;
+  border-radius: 30px;
+  padding: 8px 12px;
+  opacity: 0.8;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: medium;
+  margin-left: 8px;
+
+  &:hover{
+    background-color: $blue;
+    color: white;
+    transition: 0.8s;
+  }
+}
