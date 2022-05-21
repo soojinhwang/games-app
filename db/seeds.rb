@@ -21,36 +21,38 @@ Game.destroy_all
 
 puts "Creating users..."
 
-User.create!(email: "sooj@gmail.com",
-             password: "catlady",
-             username: "sooj",
-             first_name: "Soo-Jin",
-             last_name: "Hwang")
+sooj = User.new(email: "sooj@gmail.com",
+                password: "catlady",
+                username: "sooj",
+                first_name: "Soo-Jin",
+                last_name: "Hwang")
+sooj.save!
 
 puts "Created sooj!"
 
-User.create!(email: "joe@gmail.com",
-             password: "afroguy",
-             username: "mfjoe",
-             first_name: "Josef",
-             last_name: "Hare-Brown")
-
+mfjoe = User.new(email: "joe@gmail.com",
+                 password: "afroguy",
+                 username: "mfjoe",
+                 first_name: "Josef",
+                 last_name: "Hare-Brown")
+mfjoe.save!
 puts "Created mfjoe!"
 
-User.create!(email: "aisselaa@gmail.com",
-             password: "parislady",
-             username: "Aisselaa",
-             first_name: "Alessia",
-             last_name: "Bacigalupo")
+aisselaa = User.new(email: "aisselaa@gmail.com",
+                    password: "parislady",
+                    username: "aisselaa",
+                    first_name: "Alessia",
+                    last_name: "Bacigalupo")
 
+aisselaa.save!
 puts "Created Aisselaa!"
 
-User.create!(email: "sam@gmail.com",
-             password: "carguy",
-             username: "sammy",
-             first_name: "Samuel",
-             last_name: "Gebru")
-
+sammy = User.new(email: "sam@gmail.com",
+                 password: "carguy",
+                 username: "sammy",
+                 first_name: "Samuel",
+                 last_name: "Gebru")
+sammy.save!
 puts "Created sammy!"
 
 puts "All users created!"
