@@ -72,7 +72,11 @@
 
 .game-text {
   margin-top: 16px;
-  height: 32px;
+  // height: 100px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(165, 144, 144, 0.2);
+  border-radius: 16px;
+  padding: 16px;
 
   h5 {
     font-family: 'DM Sans';
