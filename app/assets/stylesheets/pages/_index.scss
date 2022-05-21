@@ -1,14 +1,36 @@
 // Import page-specific CSS files here.
-@import "home";
+// @import "home";
+
+.index-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-hand-games-result-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 24px 0px;
+}
+
+#map {
+  width: 60vw;
+  position: sticky;
+  top: 0;
+}
 
 .title-elements {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
 
   h1 {
     font-size: 32px;
+    font-family: 'Righteous';
   }
+}
+
+form {
+  margin-bottom: 12px;
 }

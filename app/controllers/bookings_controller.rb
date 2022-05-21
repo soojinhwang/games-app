@@ -3,10 +3,11 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+
   end
 
   def show
-    # @number_of_days = (@offer.end_date - @offer.start_date).to_i
+    @number_of_days = (@booking.end_date - @booking.start_date).to_i
   end
 
   def new;

@@ -9,7 +9,6 @@
   border-radius: 16px;
   transition: 0.3s ease-in-out;
 
-
   &:hover {
     transform: scale(1.02);
     text-decoration: none;
@@ -38,6 +37,7 @@ a {
     font-size: 24px;
     font-weight: medium;
     margin-bottom: 8px;
+    font-family: 'Righteous';
   }
 
   p {
@@ -79,4 +79,58 @@ a {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding-left: 10%;
   margin-bottom: 25px;
+}
+
+.game-map-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 240px;
+  max-width: 320px;
+  overflow: hidden;
+  background: white;
+  // border-radius: 8px;
+  padding: 8px;
+
+  img {
+    height: 160px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  h3 {
+    color: $gray;
+    font-size: 18px;
+    font-weight: medium;
+    margin-bottom: 8px;
+    font-family: 'Righteous';
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+}
+
+.game-map-card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+
+  .category {
+    background-color: $light-gray;
+    color: $dark-gray;
+    width: fit-content;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 20px;
+    opacity: 0.8;
+    margin: 0px;
+  }
+
+  .card-price{
+    color: $blue;
+    font-size: 12px;
+  }
 }
